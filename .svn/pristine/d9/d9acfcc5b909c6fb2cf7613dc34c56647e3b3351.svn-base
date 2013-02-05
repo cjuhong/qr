@@ -1,0 +1,360 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+api_post_postvoteoption:
+  url:     /api/post/postvoteoption
+  class:   sfDoctrineRoute
+  param:   { module: api, action: postvoteoption }
+  options: { model: VoteOption, type: object}
+  requirements:
+    sf_method: post
+
+api_post_postfavorite:
+  url:     /api/post/postfavorite
+  class:   sfDoctrineRoute
+  param:   { module: api, action: postfavorite }
+  options: { model: Favorite, type: object}
+  requirements:
+    sf_method: post
+
+api_post_postcomment:
+  url:     /api/post/postcomment
+  class:   sfDoctrineRoute
+  param:   { module: api, action: postcomment }
+  options: { model: Comment, type: object}
+  requirements:
+    sf_method: post
+
+api_post_signup:
+  url:     /api/post/signup
+  class:   sfDoctrineRoute
+  param:   { module: api, action: signup }
+  options: { model: sfGuardUser, type: object}
+  requirements:
+    sf_method: post
+
+api_post_checkemail:
+  url:     /api/post/user/checkemail
+  class:   sfDoctrineRoute
+  param:   { module: api, action: checkemail }
+  options: { model: sfGuardUser, type: object}
+  requirements:
+    sf_method: post
+
+api_post_checkusername:
+  url:     /api/post/user/checkusername
+  class:   sfDoctrineRoute
+  param:   { module: api, action: checkusername }
+  options: { model: sfGuardUser, type: object}
+  requirements:
+    sf_method: post
+
+api_post_verify:
+  url:     /api/post/user/verify
+  class:   sfDoctrineRoute
+  param:   { module: api, action: verify }
+  options: { model: sfGuardUser, type: object}
+  requirements:
+    sf_method: post
+
+api_post_statisticalyear:
+  url:     /api/post/statisticalyear
+  class:   sfDoctrineRoute
+  param:   { module: api, action: poststatisticalyear }
+  options: { model: StstatisticalYear, type: object}
+  requirements:
+    sf_method: post
+
+
+api_post_statisticalmonth:
+  url:     /api/post/statisticalmonth
+  class:   sfDoctrineRoute
+  param:   { module: api, action: poststatisticalmonth }
+  options: { model: StstatisticalMonth, type: object}
+  requirements:
+    sf_method: post
+
+
+api_post_statisticalday:
+  url:     /api/post/statisticalday
+  class:   sfDoctrineRoute
+  param:   { module: api, action: poststatisticalday }
+  options: { model: StstatisticalDay, type: object}
+  requirements:
+    sf_method: post
+
+
+api_post_statistical:
+  url:     /api/post/statistical
+  class:   sfDoctrineRoute
+  param:   { module: api, action: poststatistical }
+  options: { model: Ststatistical, type: object}
+  requirements:
+    sf_method: post
+
+
+api_useroption:
+  url:     /api/useroption/:publickey/:token/useroption.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: useroption }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+api_user:
+  url:     /api/user/:publickey/:token/user.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: user }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_school:
+  url:     /api/school/:publickey/:token/school.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: school }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_information:
+  url:     /api/information/:publickey/:token/information.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: information }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+
+api_statisticalyear:
+  url:     /api/statisticalyear/:publickey/:token/statisticalyear.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: statisticalyear }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_statisticalmonth:
+  url:     /api/statisticalmonth/:publickey/:token/statisticalmonth.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: statisticalmonth }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_statisticalday:
+  url:     /api/statisticalday/:publickey/:token/statisticalday.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: statisticalday }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_statistical:
+  url:     /api/statistical/:publickey/:token/statistical.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: statistical }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_voteoption:
+  url:     /api/voteoption/:publickey/:token/voteoption.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: voteoption }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_vote:
+  url:     /api/vote/:publickey/:token/vote.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: vote }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_book:
+  url:     /api/book/:publickey/:token/book.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: book }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_appintro:
+  url:     /api/appintro/:publickey/:token/appintro.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: appintro }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_app:
+  url:     /api/app/:publickey/:token/app.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: app }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_theme:
+  url:     /api/theme/:publickey/:token/theme.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: theme }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_favorite:
+  url:     /api/favorite/:publickey/:token/favorite.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: favorite }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_photoalbum:
+  url:     /api/photoalbum/:publickey/:token/photoalbum.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: photoalbum }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_comment:
+  url:     /api/comment/:publickey/:token/comment.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: comment }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_module:
+  url:     /api/module/:publickey/:token/module.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: module }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_bannergroup:
+  url:     /api/bannergroup/:publickey/:token/bannergroup.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: bannergroup }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_banner:
+  url:     /api/banner/:publickey/:token/banner.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: banner }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_article:
+  url:     /api/article/:publickey/:token/article.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: article }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_articletype:
+  url:     /api/articletype/:publickey/:token/articletype.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: articletype }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+
+api_staticcontentcategory:
+  url:     /api/staticcontentcategory/:publickey/:token/staticcontentcategory.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: staticcontentcategory }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_staticcontent:
+  url:     /api/staticcontent/:publickey/:token/staticcontent.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: staticcontent }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+
+api_article:
+  url:     /api/article/:publickey/:token/article.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: article }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+api_languages:
+  url:     /api/languages/:publickey/:token/languages.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: languages }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+api_fileuploadcategory:
+  url:     /api/fileuploadcategory/:publickey/:token/fileuploadcategory.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: fileuploadcategory }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+api_fileupload:
+  url:     /api/fileupload/:publickey/:token/fileupload.:sf_format
+  class:   sfDoctrineRoute
+  param:   { module: api, action: fileupload }
+  options: { model: Api, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:json)
+
+
+homepage:
+  url:   /
+  param: { module: main, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

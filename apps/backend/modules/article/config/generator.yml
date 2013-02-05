@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Article
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          article
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+        display: [=title,module_id,article_type,photo_album_id,orders,_is_hidden,last_modifier,updated_at]
+        max_per_page: 20
+        batch_actions:
+          _delete:
+            credentials:    [delete]
+        actions:
+          _new: 
+            credentials:    [edit, new]
+        object_actions:
+          _edit:
+            credentials:  [edit]
+          _delete:
+            credentials: [delete]
+          photo_album:
+            credentials: [delete]
+      filter:  
+        display: [module_id,article_type_id,photo_album_id]
+      form:    ~
+      edit:    ~
+      new:     ~

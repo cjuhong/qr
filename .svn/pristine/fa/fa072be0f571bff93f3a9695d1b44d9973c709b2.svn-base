@@ -1,0 +1,9 @@
+Api:
+  CTM:
+    public_key: 10
+    private_key: 7fd315fd5f381bb9035d003dbd904102
+    client:  CTM
+  TEST:
+    public_key: 50
+    private_key: 7fd315fd5f381bb9035d003dbd904102
+    client:  TEST

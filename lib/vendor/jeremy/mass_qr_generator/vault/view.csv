@@ -1,0 +1,1000 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    <title>Veetle: Connecting your World with Live Video</title>
+    <meta name="description" content="Veetle lets you instantly live stream from mobile devices (iPad, iPhone and Android) and your PC in high quality. Share video with friends and family quickly and easily." />
+<meta name="keywords" content="live stream, broadcast, live video, live tv, how to stream live, internet tv, livestreaming, live sports, live video feed" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link type="image/x-icon" href="/images/common/favicon_20120419.ico" rel="icon"/>
+<link type="text/css" rel="stylesheet" href="/minified/ccb83cbe312ba9c40415e0aaac87a5ce_minified.css"/>
+    <!--[if IE 8]>
+<link type="text/css" rel="stylesheet" href="/minified/ea709a93f1360bf2a75369b9191d4b5b_minified.css"/>
+	<![endif]-->
+	<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="/minified/78c174e9ea91c4cb6db55eea28a72ce3_minified.css"/>
+	<![endif]-->
+</head>
+<body>
+    <div id="veil" style="display: none"></div>
+    <input type="hidden" id="machine" value="veetle" />
+    <input type="hidden" id="baseUrl" value="/" />
+    <input type="hidden" id="channelListUrl" value="/channel-listing-cross-site.js" />
+    <div id="header">
+        <div class="container">
+            <a id="logo" href="/index.php" title="Home">
+                <img src="/images/spacer.gif" alt="veetle logo" class="spriteCommon" />
+            </a>
+            <ul id="navigation">
+                <li class="">
+                    <a href="/index.php/listing">Explore</a>
+                </li>
+                <li class="">
+                    <a href="/index.php/broadcast">Broadcast</a>
+                </li>
+            </ul>
+            <form id="searchForm">
+                <input type="text" />
+                <a title="Search">
+                    <strong></strong>
+                    <span></span>
+                </a>
+            </form>
+            <ul id="account">
+                <li id="accountLogin"
+                    class="quickPanel" style="display: none">
+                    <a 
+                        id="loginTab"
+                        class="accountButton">
+                        <span>Login</span>
+                        <b class="triangle triangleDown"></b>
+                    </a>
+<form id="login"
+    class="hiddenMenu hiddenMenuRightAdjust form"
+    style="display:none"
+>
+    <h4>Login with your Facebook account</h4>
+<a class="button facebookConnect disabled" id="headerFacebookConnect">
+    <span>f</span>
+    <span class="last-child ellipsis">
+        <b class="lang1 lang18">Login with Facebook</b>
+        <b class="lang2">Iniciar sesión en Facebook</b>
+        <b class="lang3">登陆Facebook</b>
+        <b class="lang4">Se connecter à Facebook</b>
+        <b class="lang5">Bei Facebook anmelden</b>
+        <b class="lang6">Accedi su Facebook</b>
+        <b class="lang7">Inicie sessão no Facebook</b>
+        <b class="lang8">Facebook'ta Oturum Açın</b>
+        <b class="lang9">Prihlaste se na Facebook</b>
+        <b class="lang10">Zaloguj sie do Facebooka</b>
+        <b class="lang11">Συνδεθείτε στο Facebook</b>
+        <b class="lang12">Logga in på Facebook</b>
+        <b class="lang13">Войти в Facebook</b>
+        <b class="lang14">フェイスブックにログイン</b>
+        <b class="lang15">페이스북에 로그인하기</b>
+        <b class="lang16">Log op Facebook in</b>
+        <b class="lang17">Log ind på Facebook</b>
+        <b class="lang19">Kirjaudu Facebookiin</b>
+        <b class="lang20">Увійдіть на Facebook</b>
+        <b class="lang21">ﺖﺴﺠﻴﻟ ﺎﻟﺪﺧﻮﻟ ﺈﻟﻯ ﺎﻠﻔﻴﺴﺑﻮﻛ</b>
+    </span> 
+</a>
+    <div class="orDivider"><span>or</span></div>
+
+    <h4>Login with your Veetle account</h4>
+    <div>
+        <label>Username or Email</label>
+        <input type="text" name="loginUsername" id="loginUsername" size="30" />
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="loginPassword" id="loginPassword" size="30" />
+    </div>
+    <div>
+        <input type="checkbox" id="loginRemember" checked="checked" />
+        <span for="loginRemember">Keep me logged in</span>
+    </div>
+    <div>
+        <input id="loginSubmit" 
+            class="button" 
+            type="submit" 
+            value="Login with Veetle" />
+    </div>
+    <p id="loginConfirmation"></p>
+    <a href="/index.php/account/forgot">Forgot your username or password?</a></form>
+                </li>
+                <li id="accountRegister"
+                    style="display: none">
+                    <a href="/index.php/account/register" 
+                        class="accountButton">
+                        <span>Register</span>
+                    </a>
+                </li>
+                <li class="quickPanel"
+                    id="accountUsername"
+                    style="display: none">
+                    <div 
+                        id="username"
+                        class="accountButton">
+                        <a id="usernameName">
+                            <img class="photo" />
+                            <span>Profile</span>
+                        </a>
+                        <a id="usernameDropdown">
+                            <b class="triangle triangleDown"></b>
+                        </a>
+                    </div>
+                    <div id="usernameMenu" 
+                        class="hiddenMenu hiddenMenuRightAdjust" 
+                        style="display: none">
+                        <a href="/index.php/account/profile"
+                            title="Change profile and account info">Settings</a>
+                        <a id="logOut"
+                            href="/index.php/logout"
+                            title="Sign out of your account">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div> <!-- end container -->
+    </div> <!-- end header -->
+    <div
+        class="container"
+        id="container"
+    >
+<div id="chromeLanding" style="display: none">
+    <a href="javascript:void(0)" class="modalClose" onclick="VEETLE.ChromeBundleChannel.closeToast(); return false">&times;</a>
+    <h6>Thanks for installing Veetle with Google Chrome.</h6>
+    <h6>Now enjoy these cool new features:</h6>
+    <blockquote>
+        <img hiddenSrc="/images/chromeLanding.png" id="plus" />
+        <div>
+            <ul>
+                <li>            
+                    <img src="/images/spacer.gif" class="spriteCommon checkMark"/>
+                    Realtime chat
+                </li>
+                <li>
+                    <img src="/images/spacer.gif" class="spriteCommon checkMark"/>
+                    Translation
+                </li>
+                <li>
+                    <img src="/images/spacer.gif" class="spriteCommon checkMark"/>
+                    Fast web surfing
+                </li>
+            </ul>
+        </div>
+    </blockquote>
+</div>
+<div id="channelPanel">
+<iframe id="adBox" class="ad" frameBorder="0" scrolling="no"></iframe>    <ul id="channelPanelTabs" class="tabs">
+        <li id="tabComments">
+            <a
+               href="javascript:void(0)"
+               onclick="VEETLE.safeClick.tryIt(VEETLE.bootstrap.tabComments.bind(VEETLE.bootstrap), 'commentsTab', 2); return false;">
+               <img src="/images/spacer.gif" class="spriteChannel iconMemberComment" />
+               <span>comments</span>
+           </a>
+        </li>
+        <li id="tabChannels">
+            <a
+               href="javascript:void(0)"
+               onclick="VEETLE.bootstrap.tabChannels(); return false;">
+               <img src="/images/spacer.gif" class="spriteChannel iconTelevision" />
+               channels
+           </a>
+        </li>
+        <li id="tabChat"
+            style="display: none">
+            <a
+               id="nagChat"
+               href="javascript:void(0)"
+               onclick="VEETLE.chromeBundle.launchChat(); return false;">
+               <img src="/images/spacer.gif" class="spriteChannel iconMemberComment" />
+               New! Chat
+           </a>
+        </li>
+    </ul>
+    <div class="tabsBottom"></div>
+    <div id="channelPanelContent">
+        <div id="panelChannels" style="display: none"></div>
+        <div id="panelComments">
+<div id="commentContainer">
+    <blockquote
+        id="commentErrorBox"
+        class="warn"
+        style="display: none">
+        <img src="/images/spacer.gif" class="spriteCommon iconError" />
+        <p id="commentError"></p>
+    </blockquote>
+    <form id="commentWrite"
+        class="commentHead"
+        method="post"
+        style="display: none">
+        <img id="commentMeAvatar" src="/images/defaultAvatar_sm.png" class="photo" />
+        <input id="commentMyMessage"
+            placeholder="Write your comment"
+            maxlength="140" />
+<a id="commentLike" class="button buttonLike notLiked">
+    <img src="/images/like/like_default.png" class="notLiked" />
+    <img src="/images/like/like_liked.png" class="liked" />
+    <span class="notLiked">Like</span>
+    <span class="liked">Liked</span>
+</a>                        	
+    </form>
+    <div id="commentBelow">
+        <a id="resumeChat"
+            href="javascript:void(0)"
+            class="button chatTrigger"
+            style="display:none">
+            Resume chat
+            <img class="spriteCommon arrowUp" src="/images/spacer.gif" id="flagTabArrow"/>
+        </a>
+        <ol id="comments">
+        </ol>
+        <p id="commentNone" style="display: none">There are no comments yet.</p>
+        <a
+            id="commentLoadMore"
+            href="javascript:void(0)"
+            class="button chatTrigger"
+            style="display:none">
+            <span id="commentLoadMoreReady">
+                Load more
+                <img class="spriteCommon arrowDownDark" src="/images/spacer.gif" id="flagTabArrow"/>
+            </span>
+            <span id="commentLoadMoreActive" style="display: none">
+                <img hiddenSrc="/images/ajaxLoading.gif" />
+            </span>
+        </a>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<div id="main">
+<div id="chromeInstalling" style="display: none" class="inHouseAd">
+    <a 
+        href="javascript:void(0)" 
+        onclick="VEETLE.ChromeBundle.closeModalMessage('chromeInstalling'); return false;" 
+        title="close"
+        class="modalClose">&times;</a>
+    <div id="chromeInstallFakeLoader">
+        <div></div>
+    </div>
+    <img src="/images/spacer.gif" class="spriteChannel googleChromeMedium" />
+    <span id="chromeInstallPending">Google Chrome is installing and will momentarily launch with this channel.</span>
+    <span id="chromeInstallDone" style="display: none">Google Chrome is installed. This channel will now play in Chrome.</span>
+</div><!-- remove for now for facebook optimiztion
+    <div id="channelViewAppPromoAd">
+        <input type="submit" class="button callerToAction buttonMedium" value="Download it today!" onclick="window.location = '/index.php/download'"/>
+    </div>
+
+-->
+
+    <iframe id="veetleHostedAd" frameborder="0" class="ad adLeaderboard"></iframe>
+    <div id="channelHeader">
+        <h1></h1>
+        <iframe
+            id="facebookLikeMinimal"
+            scrolling="no"
+            frameborder="0"
+            allowTransparency="true"
+            style="display: none;">
+        </iframe>
+        <!-- Google + button -->
+		<!-- Place this tag where you want the +1 button to render -->
+		<g:plusone size="medium" annotation="none"></g:plusone>
+        <!-- Twitter button -->
+        <a href="https://twitter.com/veetleinc" class="twitter-follow-button" data-show-count="false">Follow @veetleinc</a>
+        <a id="promoTitle" style="display: none">
+            <img />
+            <span></span>
+        </a>
+        <input type="hidden" id="channelId" value="noChannelId" />
+    </div>
+<div id="player">
+    <div id="plugin">
+        <div 
+            id="flashPlayer" 
+            style="display:none">
+        </div>
+        <img
+            id="logoOverlay" 
+            style="display: none"
+            src="/images/spacer.gif" />
+        <img 
+            id="bufferSpinner" 
+            hiddenSrc="/images/loading.gif" 
+            style="display: none" />
+        <img 
+            id="musicNote"
+            class="spriteChannel"
+            src="/images/spacer.gif"
+            style="display: none" />
+        <blockquote
+            id="message"
+            style="display:none">
+            <strong></strong>
+            <p></p>
+        </blockquote>
+        <a
+            href="javascript:void(0)"
+            onclick="VEETLE.Players.instance().getPlayer().togglePower(); return false"
+            id="playOverlay"
+            style="display: none">
+            <div></div>
+        </a>
+        <div
+            class="notReadyMessage"
+            id="unsupportedBrowserPrompt"
+            style="display: none">
+<h3>
+    <span class="operating1">Internet Explorer 64-bit can not use Veetle.</span>
+    <span class="operating2">Safari on Mac OS X Snow Leopard can not use Veetle.</span>
+    <span class="operating3">Your browser cannot use Veetle.</span>
+    <br />
+    <span class="operating1">Use normal Internet Explorer or switch to Firefox.</span>
+    <span class="operating2">We suggest you switch to Firefox.</span>
+    <span class="operating3">We suggest you switch to Firefox.</span>
+</h3>
+<div id="downloadFirefox">
+    <a 
+        id="firefoxLogo"
+        href="http://www.firefox.com"
+        title="download Firefox"
+        target="_blank">
+        <img hiddenSrc="/images/firefox.png" alt="firefox logo" />
+    </a>
+    <a 
+        href="http://www.firefox.com"
+        title="download Firefox"
+        target="_blank"
+        class="spriteCommon callToAction">
+        <img src="/images/spacer.gif" class="spriteCommon iconDownloadArrow" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Firefox
+    </a>
+</div>        </div>
+        <div
+            class="notReadyMessage"
+            id="flaggedExceeded"
+            style="display:none">
+            <h3>
+                This channel has been flagged as <span id="typeOfFlagsExceeded">spam or inappropriate</span>.
+                <br />
+                Do you still wish to watch it?
+            </h3>
+            <div>
+                <a href="/index.php/listing" class="majorButton">No, thanks</a>
+                <a href="javascript:void(0)" class="majorButton last-child" onclick="VEETLE.bootstrap.play()">Continue</a>
+            </div>
+        </div>
+        <div 
+            class="notReadyMessage"
+            id="pluginError"
+            style="display: none"
+        >
+            <h3 id="httpError">
+                <img src="/images/spacer.gif" 
+                    class="spriteCommon iconError" />
+                <span></span>
+            </h3>
+        </div>
+        <div class="notReadyMessage"
+            id="tapeDelaying"
+            style="display:none"
+        >
+            <h3>This channel will be available in:</h3>
+            <div>
+                <p></p>
+                <a style="display: none"
+                    href="/index.php/listing"
+                    class="spriteCommon callToAction">
+                    <img src="/images/spacer.gif" class="spriteCommon iconPlayAction" />
+                    Watch
+                </a>
+            </div>
+        </div>
+<div id="facebookBlocker" style="display: none">
+    <img id="facebookBlockerThumbnail" />
+    <div id="facebookBlockerContent">
+        <h2>
+            <span class="lang1 lang18">Login with Facebook to watch</span>
+            <span class="lang2">Inicie sesión en Facebook para ver</span>
+            <span class="lang3">欲收看节目，请登录Facebook</span>
+            <span class="lang4">Connectez-vous à Facebook pour regarder</span>
+            <span class="lang5">Zum Ansehen bei Facebook anmelden</span>
+            <span class="lang6">Accedi con Facebook per guardare</span>
+            <span class="lang7">Inicie sessão com o Facebook para assistir</span>
+            <span class="lang8">İzlemek için Facebook ile oturum açın</span>
+            <span class="lang9">Přihlaste se na Facebook a sledujte</span>
+            <span class="lang10">Aby obejrzeć, zaloguj się z kontem Facebooka</span>
+            <span class="lang11">Συνδεθείτε στο Facebook για να δείτε</span>
+            <span class="lang12">Logga in på Facebook för att titta</span>
+            <span class="lang13">Войдите в Facebook для просмотра</span>
+            <span class="lang14">フェイスブックでログインして見る</span>
+            <span class="lang15">페이스북에 로그인하셔서 보십시요</span>
+            <span class="lang16">Log met Facebook in om te kijken</span>
+            <span class="lang17">Log ind med Facebook for at se</span>
+            <span class="lang19">Kirjaudu Facebookiin katsoaksesi</span>
+            <span class="lang20">Для перегляду увійдіть на Facebook</span>
+            <span class="lang21">تسجيل الدخول من خلال الفيسبوك لمشاهدة</span>
+        </h2>
+        <h1>...</h1>
+<a class="button facebookConnect disabled" id="splashFacebookConnect">
+    <span>f</span>
+    <span class="last-child ellipsis">
+        <b class="lang1 lang18">Login with Facebook</b>
+        <b class="lang2">Iniciar sesión en Facebook</b>
+        <b class="lang3">登陆Facebook</b>
+        <b class="lang4">Se connecter à Facebook</b>
+        <b class="lang5">Bei Facebook anmelden</b>
+        <b class="lang6">Accedi su Facebook</b>
+        <b class="lang7">Inicie sessão no Facebook</b>
+        <b class="lang8">Facebook'ta Oturum Açın</b>
+        <b class="lang9">Prihlaste se na Facebook</b>
+        <b class="lang10">Zaloguj sie do Facebooka</b>
+        <b class="lang11">Συνδεθείτε στο Facebook</b>
+        <b class="lang12">Logga in på Facebook</b>
+        <b class="lang13">Войти в Facebook</b>
+        <b class="lang14">フェイスブックにログイン</b>
+        <b class="lang15">페이스북에 로그인하기</b>
+        <b class="lang16">Log op Facebook in</b>
+        <b class="lang17">Log ind på Facebook</b>
+        <b class="lang19">Kirjaudu Facebookiin</b>
+        <b class="lang20">Увійдіть на Facebook</b>
+        <b class="lang21">ﺖﺴﺠﻴﻟ ﺎﻟﺪﺧﻮﻟ ﺈﻟﻯ ﺎﻠﻔﻴﺴﺑﻮﻛ</b>
+    </span> 
+</a>
+
+        <iframe
+            src="//www.facebook.com/plugins/facepile.php?href=http%3A%2F%2Ffacebook.com%2Fveetleinc&amp;action&amp;size=medium&amp;max_rows=1&amp;width=325&amp;colorscheme=dark&amp;appId=221459966138" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:325px;" allowTransparency="true">
+        </iframe>
+
+        <a id="facebookBlockerExit0" class="facebookBlockerExit">
+<!--
+            <span class="lang1">No thanks, not now</span>
+            <span class="lang2">No, gracias. Más adelante.</span>
+            <span class="lang3">不，谢谢，稍后再说</span>
+            <span class="lang4">Non merci, pas maintenant</span>
+            <span class="lang5">Nein danke - nicht jetzt</span>
+            <span class="lang6">No grazie, non ora</span>
+            <span class="lang7">Não obrigado, agora não</span>
+            <span class="lang8">Hayır teşekkürler, şimdi değil</span>
+            <span class="lang9">Ne, děkuji, nyní ne</span>
+            <span class="lang10">Nie dziękuję, nie w tej chwili</span>
+            <span class="lang11">Όχι ευχαριστώ, όχι τώρα</span>
+            <span class="lang12">Nej tack, inte nu</span>
+            <span class="lang13">Нет, спасибо. Не сейчас.</span>
+            <span class="lang14">結構です、また後で</span>
+            <span class="lang15">페이스북 계정이 없습니다.</span>
+            <span class="lang16">Nee bedankt, niet nu</span>
+            <span class="lang17">Nej tak, ikke nu</span>
+            <span class="lang18">Nei takk, ikke nå</span>
+            <span class="lang19">Ei kiitos, ei nyt</span>
+            <span class="lang20">Ні, дякую, не зараз</span>
+            <span class="lang21">لا شكرا، ليس الآن</span>
+-->
+            <span class="lang1">I don't have a Facebook account</span>
+            <span class="lang2">No tengo cuenta en Facebook</span>
+            <span class="lang3">暂无facebook账号</span>
+            <span class="lang4">Je n'ai pas de compte Facebook</span>
+            <span class="lang5">Ich habe kein Facebook-Konto</span>
+            <span class="lang6">Non ho un account su Facebook</span>
+            <span class="lang7">Não tenho uma conta no Facebook</span>
+            <span class="lang8">Facebook hesabım yok</span>
+            <span class="lang9">Nemám účet na Facebooku</span>
+            <span class="lang10">Nie mam konta na Facebooku</span>
+            <span class="lang11">Δεν έχω λογαριασμό Facebook</span>
+            <span class="lang12">Jag har inget Facebookkonto</span>
+            <span class="lang13">У меня нет учетной записи в Facebook</span>
+            <span class="lang14">フェイスブックアカウントを持っていません</span>
+            <span class="lang15">아뇨, 괜찮습니다. 나중에요.</span>
+            <span class="lang16">Ik heb geen Facebook account</span>
+            <span class="lang17">Jeg har ingen Facebook konto</span>
+            <span class="lang18">Jeg har ikke en Facebook-konto</span>
+            <span class="lang19">Minulla ei ole Facebook-tiliä</span>
+            <span class="lang20">У мене немає облікового запису на Facebook</span>
+            <span class="lang21">ليس لدي حساب في فاسبوك</span>
+        </a>
+        <a id="facebookBlockerExit1" class="facebookBlockerExit">
+            <span class="lang1">I don't have a Facebook account</span>
+            <span class="lang2">No tengo cuenta en Facebook</span>
+            <span class="lang3">暂无facebook账号</span>
+            <span class="lang4">Je n'ai pas de compte Facebook</span>
+            <span class="lang5">Ich habe kein Facebook-Konto</span>
+            <span class="lang6">Non ho un account su Facebook</span>
+            <span class="lang7">Não tenho uma conta no Facebook</span>
+            <span class="lang8">Facebook hesabım yok</span>
+            <span class="lang9">Nemám účet na Facebooku</span>
+            <span class="lang10">Nie mam konta na Facebooku</span>
+            <span class="lang11">Δεν έχω λογαριασμό Facebook</span>
+            <span class="lang12">Jag har inget Facebookkonto</span>
+            <span class="lang13">У меня нет учетной записи в Facebook</span>
+            <span class="lang14">フェイスブックアカウントを持っていません</span>
+            <span class="lang15">아뇨, 괜찮습니다. 나중에요.</span>
+            <span class="lang16">Ik heb geen Facebook account</span>
+            <span class="lang17">Jeg har ingen Facebook konto</span>
+            <span class="lang18">Jeg har ikke en Facebook-konto</span>
+            <span class="lang19">Minulla ei ole Facebook-tiliä</span>
+            <span class="lang20">У мене немає облікового запису на Facebook</span>
+            <span class="lang21">ليس لدي حساب في فاسبوك</span>
+        </a>
+    </div>
+</div>    </div>
+    <div id="fileProgressBar" style="display:none">
+        <div id="fileProgressFill"></div>
+    </div>
+    <div id="playerChrome" class="spriteChannel" style="display: none">
+        <a 
+            id="resolutionCurr"
+            href="javascript:void(0)" 
+            class="spriteChannel"
+            onclick="VEETLE.bootstrap.resolutionOpen(); return false;"
+            style="display: none">
+            <span>med</span>
+            <img src="/images/spacer.gif" class="spriteCommon arrowDownLight" />
+        </a>
+        <div 
+            id="resolutions"
+            class="spritechannel"
+            href="javascript:void(0)"
+            style="display: none">
+            <a 
+                id="resolution0"
+                href="javascript:void(0)" 
+                onclick="VEETLE.bootstrap.resolutionSet(0); return false;">
+                low
+            </a>
+            <a 
+                id="resolution1"
+                href="javascript:void(0)" 
+                onclick="VEETLE.bootstrap.resolutionSet(1); return false;"
+                class="selected">
+                med
+            </a>
+            <a 
+                id="resolution2"
+                href="javascript:void(0)" 
+                onclick="VEETLE.bootstrap.resolutionSet(2); return false;">
+                high
+            </a>
+            <a 
+                id="resolution3"
+                href="javascript:void(0)" 
+                onclick="VEETLE.bootstrap.resolutionSet(3); return false;">
+                HD
+            </a>  
+        </div>
+        <a
+            id="hd"
+            class="spriteChannel minorChromeButton"
+            title="HD is on"
+            href="javascript:void(0)"
+            onclick="VEETLE.bootstrap.hdToggle(); return false;"
+            style="display: none"
+        >
+            <img 
+                class="spriteChannel" 
+                src="/images/spacer.gif" 
+            />
+        </a>
+        <a
+            id="fullScreen"
+            class="spriteChannel minorChromeButton"
+            title="full screen"
+            href="javascript:void(0)"
+            onclick="VEETLE.Players.instance().getPlayer().fullScreen(); return false;"
+            style="display: none"
+        >
+            <img 
+                class="spriteChannel" 
+                src="/images/spacer.gif" 
+            />
+        </a>
+        <a
+            id="popOut"
+            class="spriteChannel minorChromeButton"
+            title="pop out"
+            href="javascript:void(0)"
+            onclick="VEETLE.Players.instance().getChrome().popOut(); return false;"
+            style="display: none"
+        >
+            <img 
+                class="spriteChannel" 
+                src="/images/spacer.gif" 
+            />
+        </a>
+        <a
+            id="expand"
+            class="spriteChannel minorChromeButton"
+            title="expand"
+            href="javascript:void(0)"
+            onclick="VEETLE.safeClick.tryIt(VEETLE.Players.instance().getChrome().toggleExpand.bind(VEETLE.Players.instance().getChrome()), 'expand', 0.5); return false;"
+            style="display: none"
+        >
+            <img 
+                class="spriteChannel" 
+                src="/images/spacer.gif" 
+            />
+        </a>
+        <a
+            id="aspectRatio"
+            class="spriteChannel minorChromeButton"
+            href="javascript:void(0)"
+            onclick="VEETLE.Players.instance().getPlayer().nextAspectRatio()"
+            style="display: none"
+        >
+            <img 
+                id="aspectRatioIcon"
+                class="spriteChannel" 
+                src="/images/spacer.gif" 
+            />
+        </a>
+        <a
+            id="light"
+            class="spriteChannel minorChromeButton"
+            title="lights"
+            href="javascript:void(0)"
+            onclick="VEETLE.safeClick.tryIt(VEETLE.Players.instance().getChrome().lightsToggle.bind(VEETLE.Players.instance().getChrome()), 'lights', 0.5); return false;"
+            style="display: none"
+        >
+            <img 
+                class="spriteChannel" 
+                src="/images/spacer.gif" 
+            />
+        </a>
+        <a
+           id="mute"
+           class="spriteChannel minorChromeButton"
+           title="mute"
+           href="javascript:void(0)"
+           onclick="VEETLE.safeClick.tryIt(VEETLE.Players.instance().getPlayer().toggleMute.bind(VEETLE.Players.instance().getPlayer()), 'mute', 0.5); return false;"
+           style="display: none"
+       >
+           <img 
+                class="spriteChannel" 
+                src="/images/spacer.gif" 
+            />
+        </a>
+        <div 
+            id="volume" 
+            class="slider"
+            style="display: none"
+        >
+            <div id="volumeFill"></div>
+            <img id="volumeKnob" src="/images/spacer.gif" class="spriteChannel" />
+        </div>
+        <a
+           id="power"
+           class="spriteChannel minorChromeButton"
+           title="power"
+           href="javascript:void(0)"
+           onclick="VEETLE.safeClick.tryIt(VEETLE.Players.instance().getPlayer().togglePower.bind(VEETLE.Players.instance().getPlayer()), 'power', 0.5); return false;"
+           style="display: none"
+        >
+           <img 
+                class="spriteChannel" 
+                src="/images/spacer.gif" 
+            />
+        </a>
+        <a 
+            id="credit"
+            href="http://veetle.com"
+            onclick="if(VEETLE.Players.instance().getPlayer())VEETLE.Players.instance().getPlayer().stop();"
+            target="_blank"
+            style="display: none"
+        >
+            veetle.com
+        </a>        
+        <span id="fileTime" style="display: none">
+            <span id="fileCurrentTime">0:00</span> /
+            <span id="fileTotalTime">0:00</span>
+        </span>
+        <div id="downloadStrength">
+            <div id="downloadBar"></div>
+            <div id="cellPhoneBars" class="spriteChannel"></div>
+        </div>
+    </div>
+</div>
+<div id="marquee" style="display: none">
+    <div id="vlcUpgradePrompt" style="display: none">
+        <span>Download Veetle TV to watch this channel in <b>HD</b>.</span>
+        <a
+            href="javascript:void(0)"
+            onclick="VEETLE.bootstrap.vlcUpgradePrompt(); return false;"
+            class="button callerToAction">
+            <img class="spriteCommon iconDownloadArrow" src="/images/spacer.gif">
+            Free download
+        </a>
+    </div>
+    <div id="flashDowngradeUnavailable" style="display: none">
+        <img
+            src="/images/spacer.gif"
+            class="spriteCommon iconError" />
+        <span>Sorry, the low quality version of this channel is not available.</span>
+    </div>
+    <div id="flashNotInstalled" style="display: none">
+        <img
+            src="/images/spacer.gif"
+            class="spriteCommon iconError" />
+        <span>You need the newest Flash player to view the low quality version.</span>
+        <a
+            href="http://get.adobe.com/flashplayer/"
+            class="button callerToAction">
+            <img class="spriteCommon iconDownloadArrow" src="/images/spacer.gif">
+            Download Flash
+        </a>
+    </div>
+</div>    <div id="actions">
+        <div id="markers">
+            <a id="facebookShare"
+                title="Share on Facebook"
+                class="button"
+                target="_blank">
+                <img src="/images/spacer.gif"
+                    class="spriteChannel iconFacebook" />
+            </a>
+            <a id="twitterShare"
+                title="Share on Twitter"
+                class="button"
+                target="_blank">
+                <img
+                    src="/images/spacer.gif"
+                    class="spriteChannel iconTwitter" />
+            </a>
+            <a id="flagButton"
+                title="Flag as Inappropriate"
+                class="button">
+                <img src="/images/spacer.gif"
+                    class="spriteChannel iconFlag" />
+            </a>
+        </div>
+        <blockquote id="channelDescriptionContainer">
+            <span id="channelDescription"></span>
+            <a
+                id="channelDescriptionToggle"
+                style="display: none"
+                href="javascript: void(0)"
+                onclick="VEETLE.bootstrap.toggleDescription()">more info</a>
+        </blockquote>
+            <div id="channelFacebookTimelineShareNotice" style="display:none" />
+                <img src="/images/small-facebook-icon.png" />
+                <span id="facebookTimelineShareNotice">Your timeline may show you've watched this video.</span>
+            </div>
+    </div>
+    <div id="info">
+        <div id="underColumn0" class="underColumn">
+            <div id="broadcasterInfo">
+                <h2>
+                    <div>broadcaster</div>
+                </h2>
+                <a id="profilePicLink">
+                    <img id="profilePic" class="photo" />
+                </a>
+                <h3>
+                    <a id="profileNameLink" class="username"></a>
+                </h3>
+                <table>
+                    <tr>
+                        <th>started</th>
+                        <td id="sessionStarted">?</td>
+                    </tr>
+                    <tr>
+                        <th>views</th>
+                        <td id="numViews">?</td>
+                    </tr>
+                    <tr style="display: none">
+                        <th>comments</th>
+                        <td id="numComments">?</td>
+                    </tr>
+                    <tr>
+                        <th>bitrate</th>
+                        <td id="bitrate">? kbps</td>
+                    </tr>
+                    <tr>
+                        <th>source</th>
+                        <td id="source">?</td>
+                    </tr>
+                    <tr id="websiteRow">
+                        <th>website</th>
+                        <td>
+                            <a id="website" rel="nofollow" href="" target="_blank"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>category</th>
+                        <td id="category">?</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="shareCode">
+                <h2>
+                    <div>share</div>
+                </h2>
+                <blockquote>
+                    <strong>URL</strong>
+                    <input id="permalink" type="text" readonly="readonly" value="http://veetle.com/" onclick="this.select()" />
+                </blockquote>
+                <blockquote>
+                    <strong>embed</strong>
+                    <input type="text" readonly="readonly" id="embedCode" onclick="this.select()" />
+                    <a href="javascript: void" onclick="VEETLE.bootstrap.toggleWidgetOptions(); return false">
+                        <img src="/images/spacer.gif" class="spriteChannel iconGear" />
+                    </a>
+                </blockquote>
+                <div id="panelEmbed" style="display: none">
+<h3>Size</h3>
+<div id="embedDimensions">
+    <a
+       href="javascript:void(0)"
+       onclick="VEETLE.embed.changeDimensions(468,355); return false;"
+       class="selected">
+        468x355
+    </a>
+    <a
+       href="javascript:void(0)"
+       onclick="VEETLE.embed.changeDimensions(708,443); return false;"
+       class="selected">
+        708x443
+    </a>
+    <a
+       href="javascript:void(0)"
+       onclick="VEETLE.embed.changeDimensions(960,497); return false;">
+        960x497
+    </a>
+</div>
+<h3>Autoplay</h3>
+<div
+     title="Will it start playing as soon as the page loads?"
+     id="embedAutoplay">
+    <a href="javascript:void(0)"
+       onclick="VEETLE.embed.changeAutoplay(false); return false;"
+       class="selected">
+        off
+    </a>
+    <a href="javascript:void(0)"
+       onclick="VEETLE.embed.changeAutoplay(true); return false;">
+        on
+    </a>
+</div>
+<h3>Aspect Ratio</h3>
+<div
+     title="The ratio between width and height of the video"
+     id="embedAspectRatio">
+    <a href="javascript:void(0)"
+       onclick="VEETLE.embed.changeAspectRatio('default'); return false;"
+       class="selected">
+        default
+    </a>
+    <a href="javascript:void(0)"
+       onclick="VEETLE.embed.changeAspectRatio('1:1'); return false;">
+        1:1
+    </a>
+    <a href="javascript:void(0)"
+       onclick="VEETLE.embed.changeAspectRatio('5:4'); return false;">
+        5:4
+    </a>
+    <a href="javascript:void(0)"
+       onclick="VEETLE.embed.changeAspectRatio('4:3'); return false;">
+        4:3
+    </a>
+    <a href="javascript:void(0)"
+       onclick="VEETLE.embed.changeAspectRatio('16:10'); return false;">
+        16:10
+    </a>
+    <a href="javascript:void(0)"
+       onclick="VEETLE.embed.changeAspectRatio('16:9'); return false;">
+        16:9
+    </a>
+    <!-- I am no space to fit it anywhere -->
+    <!--
+    <a href="javascript:void(0)"
+       onclick="VEETLE.embed.changeAspectRatio('221:100'); return false;">
+        221:100
+    </a>
+    -->
+</div>
+                </div>
+                <div id="socialNetwork" style="display: none">
+                    <iframe id="reTweet" scrolling="no" frameborder="0"></iframe>
+                    <div id="facebookFan">
+                        <iframe id="facebookIFrame" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:180px; height:62px;" allowTransparency="true"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="underColumn1" class="underColumn">
+            <h2>
+                <div>schedule</div>
+            </h2>
+            <blockquote id="noSchedulePrompt" style="display: none">
+                The broadcaster has not filled in a <a href="/index.php/article/view/broadcast101#programme">program guide</a>.
+            </blockquote>
+            <div id="scheduleContainer">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="veetleBluekai">
+<!-- Begin BlueKai Tag -->
+<iframe name="__bkframe" height="0" width="0" frameborder="0" src="javascript:void(0)"></iframe>
+<!-- End BlueKai Tag -->
+</div>
+    <input type="hidden" id="boxDisplayAdDelay" value="2" />
+    <input type="hidden" id="boxDisplayAdPeriod" value="120" />
+    <input type="hidden" id="leaderboardDisplayAdDelay" value="2" />
+    <input type="hidden" id="leaderboardDisplayAdPeriod" value="9999" />
+    <input type="hidden" id="overlayAdDelay" value="40" />
+    <input type="hidden" id="overlayAdPeriod" value="120" />
+    <input type="hidden" id="videoAdPeriod" value="180" />
+    <input type="hidden" id="videoAdPercentAdaptvFirst" value="66" />
+    <input type="hidden" id="vlcBlockerPeriod" value="120" />
+        <br class="clear" />
+        <div id="footer">
+            <div>
+                <h5>Site</h5>
+                <ul>
+                    <li><a href="/index.php/download">Download</a></li>
+                    <li><a href="/index.php/listing">Channels</a></li>
+                    <li><a href="/index.php/broadcast">Broadcast</a></li>
+                    <li><a href="http://blog.veetle.com">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="/index.php/about">About</a></li>
+                    <li><a href="/index.php/partner">Partners</a></li>
+                    <li><a href="/index.php/about/contact">Contact</a></li>
+                    <li><a href="/index.php/jobs">Jobs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Help</h5>
+                <ul>
+                	<li><a href="/index.php/faq">FAQ</a></li>
+                    <li><a href="/index.php/article">Tutorials</a></li>           
+                    <li>
+                        <a id="footerFeedbackLink" href="/index.php/about/contact">Feedback</a>
+                    </li>
+                    <li><a href="/index.php/forum">Forum</a></li> 
+                </ul>
+            </div>
+            <div class="last-child">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="/index.php/about/terms">Terms of Service</a></li>
+                    <li><a href="/index.php/about/privacy">Privacy Policy</a></li>
+                    <li><a href="/index.php/about/copyright">Copyright Policy</a></li>
+                    <li><a href="/index.php/about/eula">EULA</a></li>
+                </ul>
+            </div>  
+            <p>
+                Veetle &copy; 2008-2012. All Rights Reserved.
+            </p>
+        </div> <!-- end footer -->
+    </div> <!-- end container -->
+<div id="feedbackPopup" class="popup" style="display:none">
+    <div class="popupVeil"></div>
+    <div class="popupContent"><form id="feedbackForm" 
+    class="form formDark"
+>
+    <div>
+        <label>Name</label>
+        <input type="text" id="feedbackName" name="feedbackName" />
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="text" id="feedbackEmail" name="feedbackEmail" />
+    </div>
+    <div>
+        <label>Comment</label>
+        <textarea id="feedbackComment" name="feedbackComment"></textarea>
+    </div>
+    <div>
+        <input id="feedbackSendButton" 
+            class="button callerToAction"
+            type="submit" 
+            value="Send" />
+    </div>
+    <p id="feedbackConfirmation"></p>
+</form></div>
+</div><script type="text/javascript" src="/minified/b92e39ff78863e94239326ae6020bc08_minified.js"></script>    </body>
+</html>

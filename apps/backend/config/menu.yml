@@ -1,0 +1,19 @@
+root:
+  people:
+    name: People
+    menu:
+      list:
+        name: People list
+        url: @homepage
+      new:
+        name: New person
+        url: @homepage
+  city:
+    name: Cities
+    menu:
+      list:
+        name: Cities list
+        url: @homepage
+      new:
+        name: New city
+        url: @homepage

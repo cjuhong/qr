@@ -1,0 +1,9 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=qrcode'
+      username: root
+      password: 'root'
+      attributes:
+        use_native_enum: true

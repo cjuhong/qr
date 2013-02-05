@@ -1,0 +1,9 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=schoolnet'
+      username: schoolnet
+      password: 'schoolnet2487#'
+      attributes:
+        use_native_enum: true

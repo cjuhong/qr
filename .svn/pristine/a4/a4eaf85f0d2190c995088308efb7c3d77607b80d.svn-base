@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           App
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          app
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:       
+        display: [id,name,os_type,last_modifier,updated_at]
+        max_per_page: 20
+        batch_actions:
+          _delete:
+            credentials:    [delete]
+        actions:
+          _new: 
+            credentials:    [edit, new]
+        object_actions:
+          _edit:
+            credentials:  [edit]
+          _delete:
+            credentials: [delete]
+          app_intro:
+            credentials: [delete]
+      filter:             
+        display: [url,os_type]
+      form:    ~
+      edit:    ~
+      new:     ~

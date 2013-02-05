@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="zh" datatype="plaintext" original="messages" date="2012-08-10T14:55:19Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>MGTO Admin Interface</source>
+        <target>澳門旅遊局後臺管理系統</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Logout</source>
+        <target>登出</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Welcome to MGTO backend system.</source>
+        <target>歡迎來到MGTO後臺管理系統</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Hotel Management</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Permissions</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Groups</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>User list</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Editing User "%%username%%"</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>New User</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Password (again)</source>
+        <target/>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

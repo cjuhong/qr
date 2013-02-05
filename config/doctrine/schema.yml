@@ -1,0 +1,641 @@
+Languages:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~
+  columns:
+    code:          { type: string(255) }
+    name:            { type: string(255) }
+    link_url:          { type: string(255) }
+    link_target:       { type:  string(50) }
+    is_approved:       { type: boolean }
+    is_published:      { type: boolean }
+    is_hidden:         { type: boolean }
+    parent_language:   { type: string(50) }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+
+# modules/main
+Api:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    public_key: { type: string(255) }
+    private_key: { type: string(255) }
+    client:  {type: string(255) }
+    is_approved:       { type: boolean }
+    is_published:      { type: boolean }
+    is_hidden:         { type: boolean }
+    last_modifier:     { type: string(255) }
+
+FileUpload:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~
+  columns:
+    file_name:           { type: string(245)} 
+    file_size:       { type: string(245) }
+    last_modifier:     { type: string(55) }
+    date:      { type: date }
+    remark:          { type: string(255) }
+    path:         { type: string(255) }
+    module:   { type: string(50) }
+    parent_id:   { type: integer, default: 0}
+    start_date:          { type: timestamp }
+    end_date:          { type: timestamp }
+
+
+StaticContent:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs:
+    Timestampable: ~
+    I18n:
+      fields: [ title, content,parent_language, is_hidden,link_target,is_link,approve,publish]
+  columns:
+    title:   { type: string(500) }
+    category_id:  { type: integer }
+    content:  { type: longtext }
+    page_name: { type: string(500) }
+    image:    { type: string(250) }
+    doc:    { type: string(250) }
+    is_hidden:  { type: boolean }
+    parent_language:  { type: string(100) }
+    is_link:    { type: string(500) }
+    link_target:  { type: string(50) }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    start_date:   { type: timestamp }
+    end_date:    { type: timestamp }
+    orders:            { type: integer, notnull: true, default: 0}
+    last_modifier:     { type: string(55) }
+  relations:
+    StaticContentCategory:  { onDelete: CASCADE, local: category_id, foreign: id }
+
+StaticContentCategory:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    name:              { type: string(255) }
+    orders:            { type: integer, notnull: true, default: 0}
+    last_modifier:   { type: string(100) }
+    parent_id:   { type: integer, default: 0}
+
+
+School:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    I18n:
+      fields: [ name, address,pedagogical_system,property,school_system,open_stage,characterstics,honor_roll,facilities,mission, remark,introduction, parent_language, is_hidden,link_target,is_link,approve,publish]
+    Timestampable: ~ 
+  columns:
+    name:          { type: string(255) }
+    address:          { type: string(255) }
+    icon:          { type: string(255) }
+    tel:            { type: string(245) }
+    fax:            { type: string(245) }
+    website:            { type: string(245) }
+    pedagogical_system:            { type: string(245) }
+    property:            { type: string(200) }
+    school_system:            { type: string(500) }
+    open_stage:            { type: string(500) }
+    latitude:           { type: string(145) }
+    longitude:           { type: string(145) }  
+    characterstics:    { type: string(500) } 
+    honor_roll:    { type: string(600) }
+    facilities:    { type: string(600) }
+    mission:    { type: string(500) }
+    remark:    { type: string(500) }
+    introduction:    { type: longtext }
+    image_one: { type: string(145) }
+    image_two: { type: string(145) }
+    image_three: { type: string(145) }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    parent_language: { type: string(50) }
+    last_modifier:     { type: string(255) }
+
+
+Statistical:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    module:          { type: string(128) }
+    sub_id:          { type: integer }
+    date:      { type: date }
+    user_id:      { type: integer }
+    ip:          { type: string(128) }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+
+
+Information:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    realtime_temp:          {  type: string(255) }
+    humidity:          { type: string(255)  }
+    high_temp:          { type: string(255) }
+    low_temp:          {  type: string(255)  }
+    weather_info:      {  type: string(255) }
+    wind_level:      { type:  string(255)  }
+    edu_youth:      {   type: string(255)}
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+
+
+Article:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [ title, content, keyword, is_hidden,approve,publish]
+  columns:
+    title:          {  type: string(245) }
+    content:          { type: longtext  }
+    keyword:          { type: string(255) }
+    comment_user:      {   type: string(145)}
+    comment_content:          {  type: longtext }
+    comment_date:          {  type: date }
+    article_type_id:          {  type: integer }
+    module_id:          {  type: integer }
+    school_id:          {  type: integer }
+    photo_album_id:          {  type: integer }
+    orders:            { type: integer, notnull: true, default: 0}
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    publish_date:      {  type: timestamp }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+  relations:
+    PhotoAlbum:   { onDelete: CASCADE, local: photo_album_id, foreign: id }
+    ArticleType:  { onDelete: CASCADE, local: article_type_id, foreign: id }
+    ModuleCategory:       { onDelete: CASCADE, local: module_id, foreign: id }
+    School:       { onDelete: CASCADE, local: school_id, foreign: id }
+
+
+
+
+PhotoAlbum:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [ name, image_one_description, image_two_description, image_three_description, is_hidden,approve,publish]
+  columns:
+    name:          {  type: string(245) }
+    image_one:          { type: string(255) }
+    image_one_description:          { type: string(500) }
+    image_two:          { type: string(255) }
+    image_two_description:          { type: string(500) }
+    image_three:          { type: string(255) }
+    image_three_description:          { type: string(500) }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+
+
+
+ArticleType:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [ name, is_hidden,approve,publish ]
+  columns:
+    name:          {  type: string(245) }
+    module_id:          {  type: integer } 
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+  relations:
+    ModuleCategory:       { onDelete: CASCADE, local: module_id, foreign: id }
+
+
+ModuleCategory:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [ name, is_hidden, approve,publish ]
+  columns:
+    name:          {  type: string(245) }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+
+
+Module:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [ name, is_hidden, approve,publish ]
+  columns:
+    name:          {  type: string(245) }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+
+Comment:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    name:          {  type: string(245) }
+    comment_id:          {  type: integer } 
+    comment:          {  type: longtext }
+    module_id:          {  type: integer } 
+    article_id:          {  type: integer } 
+    article_type_id:          {  type: integer } 
+    book_id:          {  type: integer } 
+    app_id:          {  type: integer } 
+    theme_id:          {  type: integer } 
+    vote_id:          {  type: integer } 
+    user_id:          {  type: integer } 
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+  relations:
+    ModuleCategory:       { onDelete: CASCADE, local: module_id, foreign: id }
+    Article:       { onDelete: CASCADE, local: article_id, foreign: id }
+    ArticleType:       { onDelete: CASCADE, local: article_type_id, foreign: id }
+    Book:       { onDelete: CASCADE, local: book_id, foreign: id }
+    App:       { onDelete: CASCADE, local: app_id, foreign: id }
+    Theme:       { onDelete: CASCADE, local: theme_id, foreign: id }
+    Vote:       { onDelete: CASCADE, local: vote_id, foreign: id }
+    sfGuardUser:       { onDelete: CASCADE, local: user_id, foreign: id }
+
+
+
+Book:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [name, introduction, is_hidden,approve,publish]
+  columns:
+    name:          {  type: string(245) }
+    cover:          {  type: string(245) }
+    introduction:          {  type: longtext }
+    publisher:          {  type: string(245) }
+    translator:          {  type: string(245) }
+    recommended_age:    { type: integer }
+    daybook:         { type: boolean }
+    author:          {  type: string(245) }
+    drawer:          {  type: string(245) }
+    isbn:          {  type: string(245) }
+    price:          {  type: string(245) }
+    buy_url:          {  type: string(245) }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+
+
+
+Vote:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [question, is_multiple, is_hidden, approve, publish]
+  columns:
+    date:          {  type: timestamp }
+    question:          {  type: longtext }
+    is_multiple:     { type: boolean }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+
+VoteOptions:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [vote_option]
+  columns:
+    vote_id:          {  type: integer }
+    user_id:          {  type: integer }
+    vote_option:   { type: string(250) }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    last_modifier:     { type: string(255) }
+  relations:
+    Vote:       { onDelete: CASCADE, local: vote_id, foreign: id }
+
+UserOption:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    user_id:          {  type: integer }
+    option_id:   { type: integer }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    last_modifier:     { type: string(255) }
+  relations:
+    sfGuardUser:       { onDelete: CASCADE, local: user_id, foreign: id }
+    VoteOptions:       { onDelete: CASCADE, local: option_id, foreign: id }
+
+
+
+AppIntro:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [ company_logo, company_intro, app_name, app_intro, is_hidden,approve,publish]
+  columns:
+    company_name:          {  type: string(145) }
+    company_logo:          {  type: string(245) }
+    company_intro:          {  type: longtext }
+    app_name:          {  type: string(145) }
+    app_intro:          {  type: longtext }
+    app_logo:          {  type: string(245) }
+    app_capture:          {  type: string(245) }
+    link:          {  type: string(245) }
+    app_id:         {  type: integer }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+  relations:
+    App:       { onDelete: CASCADE, local: app_id, foreign: id ,foreignType: one }
+
+
+
+App:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n: 
+      fields: [ name, introduction, is_hidden,approve,publish]
+  columns:
+    name:          {  type: string(145) }
+    url:          {  type: string(245) }
+    os_type:          {  type: string(145) }
+    introduction:          {  type: longtext }
+    logo:          {  type: string(245) }
+    screen_capture_one:          {  type: string(245) }
+    screen_capture_two:          {  type: string(245) }
+    screen_capture_three:          {  type: string(245) }
+    screen_capture_four:          {  type: string(245) }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+
+
+Theme:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [title, content, content_photo, intro,article_title, is_hidden,approve,publish]
+  columns:
+    title:          {  type: string(245) }
+    content:          {  type: longtext }
+    content_photo:    { type: string(255) }
+    intro:          {  type: longtext }
+    article_title:          {  type: string(245) }
+    article_link:          {  type: string(145) }
+    publish_date:    { type: timestamp }
+    module_id:         {  type: integer }
+    photo_album_id:         {  type: integer }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    is_hidden:         { type: boolean }
+    start_date:    { type: timestamp }
+    end_date:      { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+  relations:
+    ModuleCategory:       { onDelete: CASCADE, local: module_id, foreign: id }
+    PhotoAlbum:       { onDelete: CASCADE, local: photo_album_id, foreign: id }
+
+
+
+StatisticalDay:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    module:          { type: string(128) }
+    sub_id:          { type: integer }
+    ip_count:        { type: integer }
+    user_count:      { type: integer }
+    visitor_count:      { type: integer }
+    last_modifier:     { type: string(255) }
+
+
+StatisticalMonth:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    module:          { type: string(128) }
+    sub_id:          { type: integer }
+    ip_count:        { type: integer }
+    user_count:      { type: integer }
+    visitor_count:      { type: integer }
+    last_modifier:     { type: string(255) }
+
+StatisticalYear:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    module:          { type: string(128) }
+    sub_id:          { type: integer }
+    ip_count:        { type: integer }
+    user_count:      { type: integer }
+    visitor_count:      { type: integer }
+    last_modifier:     { type: string(255) }
+
+Favorite:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    article_type_id:          {  type: integer }
+    article_id:          {  type: integer  }
+    module_id:          {  type: integer } 
+    user_id:          {  type: integer } 
+    is_favorite:          {  type: boolean  }
+    opinion:          {  type: string(245) }
+  relations:
+    ArticleType:  { onDelete: CASCADE, local: article_type_id, foreign: id }
+    Article:       { onDelete: CASCADE, local: article_id, foreign: id }
+    ModuleCategory:       { onDelete: CASCADE, local: module_id, foreign: id }
+    sfGuardUser:       { onDelete: CASCADE, local: user_id, foreign: id }
+
+
+BannerGroup:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    name:           { type: string(255) } 
+    banner_width:   { type: string(100) }
+    banner_height:   { type: string(100) }
+    start_date:        { type: timestamp }
+    end_date:          { type: timestamp }
+    parent_id:   { type: integer, default: 0}
+    last_modifier:     { type: string(255) }
+
+
+Banner:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+    I18n:
+      fields: [name, is_hidden,link_url,link_target,parent_language, start_date,end_date,orders,image, approve,publish] 
+  columns:
+    name:           { type: string(255)} 
+    group_id:    { type: integer }
+    image:        { type: string(255) }
+    clicks:          { type: string(255) }
+    views:          { type: string(255) }
+    start_date:          { type: timestamp , default: '2012-10-31 23:59:59'}
+    end_date:          { type: timestamp , default: '2199-12-31 23:59:59'}
+    orders:            { type: integer, notnull: true, default: 0}
+    link_url:          { type: string(255) }
+    link_target:       { type:  string(50) }
+    is_hidden:         { type: boolean }
+    parent_id:   { type: integer, default: 0}
+    parent_language:   { type: string(50) }
+    approve:       { type: string(50), default: 'No' }
+    publish:      { type: string(50), default: 'No' }
+    last_modifier:     { type: string(255) }
+  relations:
+    BannerGroup:  { onDelete: CASCADE, local: group_id, foreign: id }
+

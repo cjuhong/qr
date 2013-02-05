@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Banner
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          banner
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:             
+        display: [id,name,orders, group_id,last_modifier,updated_at]
+        max_per_page: 20
+        batch_actions:
+          _delete:
+            credentials:    [delete]
+        actions:
+          _new: 
+            credentials:    [edit, new]
+        object_actions:
+          _edit:
+            credentials:  [edit]
+          _delete:
+            credentials: [delete]
+      filter: 
+        display: [group_id]
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Comment
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          comment
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:              
+        display: [id,name,comment,module_id,article_id,book_id,last_modifier,updated_at]
+        max_per_page: 20
+        batch_actions:
+          _delete:
+            credentials:    [delete]
+        actions:
+          _new: 
+            credentials:    [edit, new]
+        object_actions:
+          _edit:
+            credentials:  [edit]
+          _delete:
+            credentials: [delete]
+      filter:  
+        display: [name,module_id,article_id,book_id,article_type_id,app_id,theme_id,vote_id,user_id]
+      form:    ~
+      edit:    ~
+      new:     ~

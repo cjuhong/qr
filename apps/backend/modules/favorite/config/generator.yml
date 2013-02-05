@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Favorite
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          favorite
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:              
+        display: [id, article_id,article_type_id,is_favorite,updated_at]
+        max_per_page: 20
+        batch_actions:
+          _delete:
+            credentials:    [delete]
+        actions:
+          _new: 
+            credentials:    [edit, new]
+        object_actions:
+          _edit:
+            credentials:  [edit]
+          _delete:
+            credentials: [delete]
+      filter:  
+        display: [article_id,article_type_id, is_favorite]
+      form:    ~
+      edit:    ~
+      new:     ~

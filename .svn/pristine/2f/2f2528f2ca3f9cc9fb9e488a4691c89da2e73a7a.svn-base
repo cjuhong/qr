@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="2012-08-10T15:01:37Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>MGTO Admin Interface</source>
+        <target>MGTO interface admin</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Permissions</source>
+        <target>autorisations</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Groups</source>
+        <target>groupes</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Welcome to MGTO backend system.</source>
+        <target>Bienvenue dans le système backend MGTO.</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Hotel Management</source>
+        <target>hôtel de gestion</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>User list</source>
+        <target>liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Editing User "%%username%%"</source>
+        <target>Modification de Utilisateur "%%%% username"</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>New User</source>
+        <target>Nouvel utilisateur</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Password (again)</source>
+        <target>Mot de passe (à nouveau)</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Management Languages</source>
+        <target>gestion de gestion</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Users</source>
+        <target>utilisateurs</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

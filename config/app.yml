@@ -1,0 +1,23 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  cachepath: "http://202.175.31.72/edu/admin/APICache.php?flush=1&module="
+  upload_path_article: /schoolnet/uploads/article/
+  upload_path_static_content: /schoolnet/uploads/static_content/
+  upload_path_file_upload: /schoolnet/uploads/
+  upload_path_photo_album: /schoolnet/uploads/photo_album/
+  upload_path_app: /schoolnet/uploads/app/
+  upload_path_app_intro: /schoolnet/uploads/app_intro/
+  upload_path_school: /schoolnet/uploads/school/
+  upload_path_banner: /schoolnet/uploads/banner/
+  upload_path_book: /schoolnet/uploads/book/
+  upload_path_theme: /schoolnet/uploads/theme/
+  upload_path_static_content: /schoolnet/uploads/static_content/
+  api_current_host_path:  /schoolnet/uploads/
+  sdInteractiveChart_web_dir:      /sdInteractiveChartPlugin
+  sdInteractiveChart_chart_js_url: 'http://www.google.com/'
+  sdInteractiveChart_ajax_api:     'jsapi'
+  sdInteractiveChart_auto_load_js:  true
+  sdInteractiveChart_debug_mode:    false

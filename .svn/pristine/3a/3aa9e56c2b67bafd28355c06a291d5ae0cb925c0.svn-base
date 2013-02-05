@@ -1,0 +1,273 @@
+Languages:
+  zh:
+    code: zh
+    name: Chinese
+  en:
+    code: en
+    name: English
+
+sfGuardUser:
+  User_jeremy:
+    first_name:     jeremy
+    last_name:      jeremy
+    email_address:  cjuhong@gmail.com
+    language:  Portuguese
+    username:       jeremy
+    password:       jeremy
+    is_super_admin: true
+    Groups:         [Group_administrator]
+  User_andy:
+    first_name: andy
+    last_name: andy
+    email_address: andy@andy.com
+    language:  Chinese
+    username: andy
+    password: andy
+    is_super_admin: true
+    Groups: [Group_administrator]
+  User_lawrence: 
+    first_name: lawrence
+    last_name: lawrence
+    email_address: lawrence@lawrence.com
+    language:  Portuguese
+    username: lawrence
+    password: lawrence
+    is_super_admin: true
+    Groups: [Group_administrator]
+  User_steven: 
+    first_name: steven
+    last_name: steven
+    email_address: steven@steven.com
+    language:  Chinese
+    username: steven
+    password: steven
+    is_super_admin: true
+    Groups: [Group_administrator]
+  User_wendy: 
+    first_name: wendy
+    last_name: wendy
+    email_address: wendy@wendy.com
+    language:  Chinese
+    username: wendy
+    password: wendy
+    is_super_admin: true
+    Groups: [Group_administrator]
+  User_high: 
+    first_name: high
+    last_name: high
+    email_address: high@high.com
+    language:  Portuguese
+    username: high
+    password: high
+    is_super_admin: false
+    Groups: [Group_administrator]
+  User_medium: 
+    first_name: medium
+    last_name: medium
+    email_address: medium@medium.com
+    language:  Portuguese
+    username: medium
+    password: medium
+    is_super_admin: false
+    Groups: [Group_approvers]
+  User_low: 
+    first_name: low
+    last_name: low
+    email_address: low@low.com
+    username: low
+    password: low
+    language:  Portuguese
+    is_super_admin: false
+    Groups: [Group_content_managers ]
+  User_forumtest: 
+    first_name: forumtest
+    last_name: forumtest
+    email_address: forumtest@low.com
+    username: forumtest
+    password: forumtest
+    language:  Portuguese
+    is_super_admin: false
+    Groups: [Group_forum_user ]
+
+sfGuardGroup:
+  Group_administrator:
+    name:           administrator
+    description:    Administrator group
+    Permissions:    [Permission_new, Permission_access, Permission_edit, Permission_delete, Permission_publish, Permission_approve, Permission_create_user]
+  Group_approvers:
+    name: approvers
+    description: approvers group
+    Permissions: [Permission_new, Permission_access, Permission_edit, Permission_delete, Permission_publish, Permission_approve]
+  Group_content_managers:
+    name: content_managers
+    description: content_managers group
+    Permissions: [Permission_access, Permission_edit]
+  Group_forum_user:
+    name: forum_user
+    description: forum_user group
+    Permissions: [Permission_forum_user]
+
+sfGuardPermission:
+  Permission_access:
+    name:           access
+    description:    access
+  Permission_new:
+    name: new
+    description: new
+  Permission_edit:
+    name: edit
+    description: edit
+  Permission_delete:
+    name: delete
+    description: delete
+  Permission_approve:
+    name: approve
+    description: approve
+  Permission_publish:
+    name: publish
+    description: publish
+  Permission_create_user:
+    name: create_user
+    description: create_user
+  Permission_forum_user:
+    name: forum_user
+    description: forum_user
+
+
+BannerGroup:
+  index_top:
+    name: index_top
+    banner_width: 725
+    banner_height: 95
+  index_bottom:
+    name: index_bottom
+    banner_width: 170
+    banner_height: 60
+  index_app:
+    name: index_app
+    banner_width: 170
+    banner_height: 60
+  index_theme:
+    name:  index_theme
+    banner_width: 185
+    banner_height: 185
+
+
+ModuleCategory:
+  校園News:
+    Translation:
+      zh:
+        name: 校園News
+      en:
+        name: 校園News
+  兒童天地:
+    Translation:
+      zh:
+        name: 兒童天地
+      en:
+        name: 兒童天地
+  智慧家長:
+    Translation:
+      zh:
+        name: 智慧家長
+      en:
+        name: 智慧家長
+  健康貼士:
+    Translation:
+      zh:
+        name: 健康貼士
+      en:
+        name: 健康貼士
+
+ArticleType:
+  學術性比賽:
+    Translation:
+      zh:
+        name: 學術性比賽
+      en:
+        name: 學術性比賽
+    module_id: 1
+  文娛比賽:
+    Translation:
+      zh:
+        name: 文娛比賽
+      en:
+        name: 文娛比賽
+    module_id: 1
+  體育比賽:
+    Translation:
+      zh:
+        name: 體育比賽
+      en:
+        name: 體育比賽
+    module_id: 1
+  免費遊樂場:
+    Translation:
+      zh:
+        name: 免費遊樂場
+      en:
+        name: 免費遊樂場
+    module_id: 2
+  收費遊樂場:
+    Translation:
+      zh:
+        name: 收費遊樂場
+      en:
+        name: 收費遊樂場
+    module_id: 2
+  親子新知:
+    Translation:
+      zh:
+        name: 親子新知
+      en:
+        name: 親子新知
+    module_id: 3
+  家長學堂:
+    Translation:
+      zh:
+        name: 家長學堂
+      en:
+        name: 家長學堂
+    module_id: 3
+  家庭理財:
+    Translation:
+      zh:
+        name: 家庭理財
+      en:
+        name: 家庭理財
+    module_id: 3
+  醫護:
+    Translation:
+      zh:
+        name: 醫護
+      en:
+        name: 醫護
+    module_id: 4
+  營養:
+    Translation:
+      zh:
+        name: 營養
+      en:
+        name: 營養
+    module_id: 4
+  急救常識:
+    Translation:
+      zh:
+        name: 急救常識
+      en:
+        name: 急救常識
+    module_id: 4
+  主題派對:
+    Translation:
+      zh:
+        name: 主題派對
+      en:
+        name: 主題派對
+    module_id: 2
+  校園News:
+    Translation:
+      zh:
+        name: 校園News
+      en:
+        name: 校園News
+    module_id: 1
