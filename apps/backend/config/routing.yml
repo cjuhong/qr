@@ -1,3 +1,13 @@
+qrgenerate:
+  url:   /qrgenerate
+  param: { module: qr, action: qrgenerate }
+
+
+qrupload:
+  url:   /qrupload
+  param: { module: qr, action: qrupload }
+
+
 vote_options:
   class: sfDoctrineRouteCollection
   options:
@@ -354,6 +364,12 @@ user_login_history:
     prefix_path:          /UserLoginHistory
     column:               id
     with_wildcard_routes: true
+
+
+qr:
+  url:   /qr
+  param: { module: qr, action: index }
+
 
 
 change_language:

@@ -10,7 +10,7 @@ class breadcrumbsComponents extends sfComponents
     $data = new pmSuperfishMenu();
     $data->setName("Web Data")->setUrl('@homepage');
 
-     /**********************************************************************/
+   /**********************************************************************/
 
     $menu_item = new pmSuperfishMenuItem();
     $menu_item->setName('School')->setUrl('@school');
@@ -203,6 +203,15 @@ class breadcrumbsComponents extends sfComponents
 
     $this->navMenu->addChild('Permissions Management',$menu);
     */
+
+    /****************************************************************************************/
+    $menu = new pmSuperfishMenu();
+    $menu->setName("QR")->setUrl('@homepage')->setCredentials('create_user');
+    $menu_item = new pmSuperfishMenuItem();
+    $menu_item->setName('QR')->setUrl('@qr');
+    $menu->addChild("QR",$menu_item);
+    $this->navMenu->addChild('QR',$menu);
+
     /****************************************************************************************/
     $menu = new pmSuperfishMenu();
     $menu->setName("API Management")->setUrl('@homepage')->setCredentials('create_user');
