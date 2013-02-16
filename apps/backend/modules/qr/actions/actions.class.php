@@ -78,6 +78,7 @@ class qrActions extends sfActions
 
   public function executeQrgenerate(sfWebRequest $request)
   {
+    set_time_limit(300);
     //$this->forward('default', 'module');
     //var_dump(get_class_methods(Qr));
     //echo dirname(__FILE__);
@@ -137,8 +138,8 @@ class qrActions extends sfActions
 						   die('data cannot be empty! <a href="?">back</a>');
 				      }
 					  $filename = 'test'.md5($qr.'|'.$errorCorrectionLevel.'|'.$matrixPointSize).'.png';
-					  //echo $filename."<br/>";
-					  Qr::png($qr, $filename, 'L', 4, 2);
+					  //echo $filename."<br/>";            
+					  Qr::png($qr, $PNG_TEMP_DIR.$filename, 'L', 4, 2);
 					  $row_str = '<td><table><tr><td><img src="'.$path.$filename.'"/></td><td>'.$tx.'</td></tr></table></td>'; 
 					  $row_count++;
 					  $str = $str.$row_str;

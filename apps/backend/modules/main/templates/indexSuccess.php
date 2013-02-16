@@ -1,3 +1,3 @@
 <a>
-<?php echo __('Welcome to School Net backend system.') ?>
+<?php echo __('Welcome to QR code backend system.') ?>
 </a>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
                                              <head>
                                              <title>
-<?php echo __('School Net Admin Interface') ?>
+<?php echo __('QR Code Admin Interface') ?>
                                              </title>
                                              <link rel="shortcut icon" href="/favicon.ico" />
 <?php include_javascripts() ?>
@@ -15,7 +15,7 @@
                                              <div id="header">
                                              <h1>
                                              <a href="<?php echo url_for('homepage') ?>">
-                                             <img src="/images/logo.jpg" alt="School Net backend system" />
+                                             <img src="/images/logo.jpg" alt="QR code backend system" />
                                              </a>
                                              </h1>
                                              <li>
